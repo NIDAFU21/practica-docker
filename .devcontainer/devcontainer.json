@@ -1,11 +1,18 @@
 {
-    "name": "Docker in Codespaces",
-    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+    "name": "Docker Practice Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "ghcr.io/devcontainers/features/docker-in-docker:4": {
             "version": "latest",
             "moby": false
         }
     },
-    "postCreateCommand": "docker --version"
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "remoteUser": "vscode"
 }
